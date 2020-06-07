@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C547E74248C905700E98164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E73248C905700E98164 /* AppDelegate.swift */; };
+		6C547E76248C905700E98164 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E75248C905700E98164 /* SceneDelegate.swift */; };
+		6C547E78248C905700E98164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E77248C905700E98164 /* ViewController.swift */; };
+		6C547E7B248C905700E98164 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C547E79248C905700E98164 /* Main.storyboard */; };
+		6C547E7E248C905700E98164 /* ToDocalender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E7C248C905700E98164 /* ToDocalender.xcdatamodeld */; };
+		6C547E80248C905A00E98164 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C547E7F248C905A00E98164 /* Assets.xcassets */; };
+		6C547E83248C905A00E98164 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C547E81248C905A00E98164 /* LaunchScreen.storyboard */; };
+		6C547E8E248C905A00E98164 /* ToDocalenderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E8D248C905A00E98164 /* ToDocalenderTests.swift */; };
+		6C547E99248C905A00E98164 /* ToDocalenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E98248C905A00E98164 /* ToDocalenderUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6C547E8A248C905A00E98164 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C547E68248C905700E98164 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C547E6F248C905700E98164;
+			remoteInfo = ToDocalender;
+		};
+		6C547E95248C905A00E98164 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6C547E68248C905700E98164 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C547E6F248C905700E98164;
+			remoteInfo = ToDocalender;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6C547E70248C905700E98164 /* ToDocalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDocalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C547E73248C905700E98164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6C547E75248C905700E98164 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6C547E77248C905700E98164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6C547E7A248C905700E98164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6C547E7D248C905700E98164 /* ToDocalender.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDocalender.xcdatamodel; sourceTree = "<group>"; };
+		6C547E7F248C905A00E98164 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C547E82248C905A00E98164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6C547E84248C905A00E98164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C547E89248C905A00E98164 /* ToDocalenderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDocalenderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C547E8D248C905A00E98164 /* ToDocalenderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDocalenderTests.swift; sourceTree = "<group>"; };
+		6C547E8F248C905A00E98164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C547E94248C905A00E98164 /* ToDocalenderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDocalenderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C547E98248C905A00E98164 /* ToDocalenderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDocalenderUITests.swift; sourceTree = "<group>"; };
+		6C547E9A248C905A00E98164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6C547E6D248C905700E98164 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C547E86248C905A00E98164 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C547E91248C905A00E98164 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6C547E67248C905700E98164 = {
+			isa = PBXGroup;
+			children = (
+				6C547E72248C905700E98164 /* ToDocalender */,
+				6C547E8C248C905A00E98164 /* ToDocalenderTests */,
+				6C547E97248C905A00E98164 /* ToDocalenderUITests */,
+				6C547E71248C905700E98164 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6C547E71248C905700E98164 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6C547E70248C905700E98164 /* ToDocalender.app */,
+				6C547E89248C905A00E98164 /* ToDocalenderTests.xctest */,
+				6C547E94248C905A00E98164 /* ToDocalenderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6C547E72248C905700E98164 /* ToDocalender */ = {
+			isa = PBXGroup;
+			children = (
+				6C547E73248C905700E98164 /* AppDelegate.swift */,
+				6C547E75248C905700E98164 /* SceneDelegate.swift */,
+				6C547E77248C905700E98164 /* ViewController.swift */,
+				6C547E79248C905700E98164 /* Main.storyboard */,
+				6C547E7F248C905A00E98164 /* Assets.xcassets */,
+				6C547E81248C905A00E98164 /* LaunchScreen.storyboard */,
+				6C547E84248C905A00E98164 /* Info.plist */,
+				6C547E7C248C905700E98164 /* ToDocalender.xcdatamodeld */,
+			);
+			path = ToDocalender;
+			sourceTree = "<group>";
+		};
+		6C547E8C248C905A00E98164 /* ToDocalenderTests */ = {
+			isa = PBXGroup;
+			children = (
+				6C547E8D248C905A00E98164 /* ToDocalenderTests.swift */,
+				6C547E8F248C905A00E98164 /* Info.plist */,
+			);
+			path = ToDocalenderTests;
+			sourceTree = "<group>";
+		};
+		6C547E97248C905A00E98164 /* ToDocalenderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6C547E98248C905A00E98164 /* ToDocalenderUITests.swift */,
+				6C547E9A248C905A00E98164 /* Info.plist */,
+			);
+			path = ToDocalenderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6C547E6F248C905700E98164 /* ToDocalender */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C547E9D248C905A00E98164 /* Build configuration list for PBXNativeTarget "ToDocalender" */;
+			buildPhases = (
+				6C547E6C248C905700E98164 /* Sources */,
+				6C547E6D248C905700E98164 /* Frameworks */,
+				6C547E6E248C905700E98164 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ToDocalender;
+			productName = ToDocalender;
+			productReference = 6C547E70248C905700E98164 /* ToDocalender.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6C547E88248C905A00E98164 /* ToDocalenderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C547EA0248C905A00E98164 /* Build configuration list for PBXNativeTarget "ToDocalenderTests" */;
+			buildPhases = (
+				6C547E85248C905A00E98164 /* Sources */,
+				6C547E86248C905A00E98164 /* Frameworks */,
+				6C547E87248C905A00E98164 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C547E8B248C905A00E98164 /* PBXTargetDependency */,
+			);
+			name = ToDocalenderTests;
+			productName = ToDocalenderTests;
+			productReference = 6C547E89248C905A00E98164 /* ToDocalenderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6C547E93248C905A00E98164 /* ToDocalenderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6C547EA3248C905A00E98164 /* Build configuration list for PBXNativeTarget "ToDocalenderUITests" */;
+			buildPhases = (
+				6C547E90248C905A00E98164 /* Sources */,
+				6C547E91248C905A00E98164 /* Frameworks */,
+				6C547E92248C905A00E98164 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6C547E96248C905A00E98164 /* PBXTargetDependency */,
+			);
+			name = ToDocalenderUITests;
+			productName = ToDocalenderUITests;
+			productReference = 6C547E94248C905A00E98164 /* ToDocalenderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6C547E68248C905700E98164 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1110;
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "大澤清乃";
+				TargetAttributes = {
+					6C547E6F248C905700E98164 = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					6C547E88248C905A00E98164 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 6C547E6F248C905700E98164;
+					};
+					6C547E93248C905A00E98164 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 6C547E6F248C905700E98164;
+					};
+				};
+			};
+			buildConfigurationList = 6C547E6B248C905700E98164 /* Build configuration list for PBXProject "ToDocalender" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6C547E67248C905700E98164;
+			productRefGroup = 6C547E71248C905700E98164 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6C547E6F248C905700E98164 /* ToDocalender */,
+				6C547E88248C905A00E98164 /* ToDocalenderTests */,
+				6C547E93248C905A00E98164 /* ToDocalenderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6C547E6E248C905700E98164 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C547E83248C905A00E98164 /* LaunchScreen.storyboard in Resources */,
+				6C547E80248C905A00E98164 /* Assets.xcassets in Resources */,
+				6C547E7B248C905700E98164 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C547E87248C905A00E98164 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C547E92248C905A00E98164 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6C547E6C248C905700E98164 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C547E78248C905700E98164 /* ViewController.swift in Sources */,
+				6C547E7E248C905700E98164 /* ToDocalender.xcdatamodeld in Sources */,
+				6C547E74248C905700E98164 /* AppDelegate.swift in Sources */,
+				6C547E76248C905700E98164 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C547E85248C905A00E98164 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C547E8E248C905A00E98164 /* ToDocalenderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6C547E90248C905A00E98164 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C547E99248C905A00E98164 /* ToDocalenderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6C547E8B248C905A00E98164 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C547E6F248C905700E98164 /* ToDocalender */;
+			targetProxy = 6C547E8A248C905A00E98164 /* PBXContainerItemProxy */;
+		};
+		6C547E96248C905A00E98164 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6C547E6F248C905700E98164 /* ToDocalender */;
+			targetProxy = 6C547E95248C905A00E98164 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6C547E79248C905700E98164 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C547E7A248C905700E98164 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6C547E81248C905A00E98164 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C547E82248C905A00E98164 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6C547E9B248C905A00E98164 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6C547E9C248C905A00E98164 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6C547E9E248C905A00E98164 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ToDocalender/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalender;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6C547E9F248C905A00E98164 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ToDocalender/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalender;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6C547EA1248C905A00E98164 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ToDocalenderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalenderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDocalender.app/ToDocalender";
+			};
+			name = Debug;
+		};
+		6C547EA2248C905A00E98164 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ToDocalenderTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalenderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDocalender.app/ToDocalender";
+			};
+			name = Release;
+		};
+		6C547EA4248C905A00E98164 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ToDocalenderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalenderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ToDocalender;
+			};
+			name = Debug;
+		};
+		6C547EA5248C905A00E98164 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ToDocalenderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalenderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ToDocalender;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6C547E6B248C905700E98164 /* Build configuration list for PBXProject "ToDocalender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C547E9B248C905A00E98164 /* Debug */,
+				6C547E9C248C905A00E98164 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C547E9D248C905A00E98164 /* Build configuration list for PBXNativeTarget "ToDocalender" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C547E9E248C905A00E98164 /* Debug */,
+				6C547E9F248C905A00E98164 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C547EA0248C905A00E98164 /* Build configuration list for PBXNativeTarget "ToDocalenderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C547EA1248C905A00E98164 /* Debug */,
+				6C547EA2248C905A00E98164 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6C547EA3248C905A00E98164 /* Build configuration list for PBXNativeTarget "ToDocalenderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C547EA4248C905A00E98164 /* Debug */,
+				6C547EA5248C905A00E98164 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6C547E7C248C905700E98164 /* ToDocalender.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6C547E7D248C905700E98164 /* ToDocalender.xcdatamodel */,
+			);
+			currentVersion = 6C547E7D248C905700E98164 /* ToDocalender.xcdatamodel */;
+			path = ToDocalender.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6C547E68248C905700E98164 /* Project object */;
+}
