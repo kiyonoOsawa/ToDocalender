@@ -13,12 +13,12 @@ class AddScheduleViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet var textField: UITextField!
     
     var pickerView: UIPickerView = UIPickerView()
-       let list = ["","1","2","3","4"]
+    let list = ["","1","2","3","4"]
     
     @IBOutlet var circleButton: UIButton!
-
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
+    super.viewDidLoad()
         
         circleButton.layer.cornerRadius = 5
         
@@ -33,72 +33,47 @@ class AddScheduleViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         self.textField.inputView = pickerView
         self.textField.inputAccessoryView = toolbar
-        
+
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
-        
     }
-        
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent componet: Int) -> Int {
         return list.count
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent componet: Int) -> String? {
+   
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return list[row]
-        
     }
-
+    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.textField.text = list[row]
-        
     }
     
     func cancel() {
         self.textField.text = ""
         self.textField.endEditing(true)
-    
     }
-    
+        
     func done() {
         self.textField.endEditing(true)
-        
     }
     
-    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ heifht: CGFloat) -> CGRect {
+    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ heifht: CGFloat) -> CGFloat {
         return CGRect(x: x, y: y, width: width, height: heifht)
-        
     }
+    
+   
     
     override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+       super.didReceiveMemoryWarning()
     }
         // Do any additional setup after loading the view.
-    }
+}
     
-   // var pickerView: UIPickerView = UIPickerView()
-   // let list = ["","1","2","3","4"]
-    
-   // pickerView.delegate = self
-   //pickerView.dataSource = self
-   // pickerView.showsSelectionIndicator = true
-    
-   // let toolbar = UIToolbar(frame: CGRectMake(0,0,0,35))
-   // let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(ViewController.done))
-   // let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(ViewController.cancel)) toolbar.setItems([cancelItem,doneItem],animated: true)
-    
-   // self.textField.inputView = pickerView
-   // self.textField.inputAccessoryView = toolbar
-    
-    
-   // @IBOutlet var circleButton: UIButton!
-
-   // override func viewDidLoad() {
-     //   super.viewDidLoad()
-        
-       // circleButton.layer.cornerRadius = 5
-
+   
 
         // Do any additional setup after loading the view.
     
