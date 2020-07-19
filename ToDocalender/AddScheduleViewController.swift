@@ -7,72 +7,172 @@
 //
 
 import UIKit
+import RealmSwift
 
-class AddScheduleViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddScheduleViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    @IBOutlet var textField: UITextField!
+    @IBOutlet var table: UITableView!
     
-    var pickerView: UIPickerView = UIPickerView()
-    let list = ["","1","2","3","4"]
+    //@IBOutlet var textField: UITextField!
     
-    @IBOutlet var circleButton: UIButton!
+    //var pickerView: UIPickerView = UIPickerView()
+    //let list = ["","1","2","3","4"]
+    var TODO:[String] = []
+    let ud = UserDefaults.standard
+    var saveTitle: String = ""
+    
+    //@IBOutlet var circleButton: UIButton!
     
     override func viewDidLoad() {
-    super.viewDidLoad()
+        super.viewDidLoad()
         
-        circleButton.layer.cornerRadius = 5
+      //tableviewのデータソースメゾットはviewcontorollerクラスに書く
+        table.dataSource = self
+        table.delegate = self
+        if self.ud.object(forKey: "category") != nil {
+            TODO = self.ud.object(forKey: "category") as! [String]
+        }
+        //circleButton.layer.cornerRadius = 5
+    
+        // ピッカー設定
+        //pickerView.delegate = self
+        //pickerView.dataSource = self
+        //pickerView.showsSelectionIndicator = true
+        // 決定バーの生成
+//        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
+//        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+//        toolbar.setItems([spacelItem, doneItem], animated: true)
+//        // インプットビュー設定
+//        textField.inputView = pickerView
+//        textField.inputAccessoryView = toolbar
+    }
+    // 決定ボタン押下
+//    @objc func done() {
+//        textField.endEditing(true)
+//        textField.text = "\(list[pickerView.selectedRow(inComponent: 0)])"
+//    }
+//    // ドラムロールの列数
+//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+//        return 1
+//    }
+//    // ドラムロールの行数
+//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+//        /*
+//         列が複数ある場合は
+//         if component == 0 {
+//         } else {
+//         ...
+//         }
+//         こんな感じで分岐が可能
+//         */
+//        return list.count
+//    }
+//    // ドラムロールの各タイトル
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        /*
+//         列が複数ある場合は
+//         if component == 0 {
+//         } else {
+//         ...
+//         }
+//         こんな感じで分岐が可能
+//         */
+//        return list[row]
+//    }
+    
+    //セルの数を設定
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return TODO.count
+    }
+    //ID付きのセルを取得してセル付属のtextLabelに「テスト」と表示する
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView.showsSelectionIndicator = true
+        cell?.textLabel?.text = TODO[indexPath.row]
         
-        let toolbar = UIToolbar(frame: CGRectMake(0,0,0,35))
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(ViewController.done))
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(ViewController.cancel))
-        toolbar.setItems([cancelItem,doneItem],animated: true)
+        return cell!
+    }
+    
+    
+    @IBAction func addCategory(_ sender: Any) {
         
-        self.textField.inputView = pickerView
-        self.textField.inputAccessoryView = toolbar
+        //アラートコントローラー
+        let alert = UIAlertController(title: "新規カテゴリ", message: "", preferredStyle: .alert)
+        var textField = UITextField()
+        //OKボタンを生成
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
+            //複数のtextFieldのテキストを格納
+            //guard let textFields:[UITextField] = alert.textFields else {return}
+            //ここでuserdefaultsに保存
+            self.TODO.append(textField.text!)
+            self.ud.set(self.TODO, forKey: "category")
+            self.table.reloadData()
+        }
+        //OKボタンを追加
+        alert.addAction(okAction)
+        
+        //Cancelボタンを生成
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //Cancelボタンを追加
+        alert.addAction(cancelAction)
+        
+        //TextFieldを２つ追加
+        alert.addTextField { (text: UITextField!) in
+            text.placeholder = "テキストを入力してください"
+            //１つ目のtextFieldのタグ
+            textField = text
+        }
+        
+        //アラートを表示
+        present(alert, animated: true, completion: nil)
 
     }
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)番目の行が選択されました。")
+        saveTitle = TODO[indexPath.row]
+        let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "記録しますか？", preferredStyle: UIAlertController.Style.actionSheet)
+            
+            let defaultAction: UIAlertAction = UIAlertAction(title: "OK?", style: UIAlertAction.Style.default, handler:{
+                (action: UIAlertAction!) -> Void in
+                print("OK")
+                
+                self.saveData()
+        })
+            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+                (action: UIAlertAction!) -> Void in
+                print("cancel")
+        })
+            alert.addAction(cancelAction)
+            alert.addAction(defaultAction)
+            
+            present(alert, animated: true, completion: nil)
     }
+    
+    func saveData() {
+        // 入力値をセット
+        let item:Item = Item()
+        item.title = self.saveTitle
 
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent componet: Int) -> Int {
-        return list.count
-    }
-   
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return list[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.textField.text = list[row]
+        // 保存
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(item)
+        }
     }
     
-    func cancel() {
-        self.textField.text = ""
-        self.textField.endEditing(true)
-    }
-        
-    func done() {
-        self.textField.endEditing(true)
-    }
     
-    func CGRectMake(_ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ heifht: CGFloat) -> CGFloat {
-        return CGRect(x: x, y: y, width: width, height: heifht)
-    }
-    
-   
-    
-    override func didReceiveMemoryWarning() {
-       super.didReceiveMemoryWarning()
-    }
-        // Do any additional setup after loading the view.
-}
-    
+    // Do any additional setup after loading the view.
+
+// Do any additional setup after loading the view.
+/*
+ // MARK: - Navigation
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
    
 
         // Do any additional setup after loading the view.
@@ -90,3 +190,4 @@ class AddScheduleViewController: UIViewController, UIPickerViewDelegate, UIPicke
     */
 
 
+}
