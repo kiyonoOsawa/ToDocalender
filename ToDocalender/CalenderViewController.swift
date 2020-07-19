@@ -26,7 +26,8 @@ class CalenderViewController: UIViewController, UITableViewDataSource {
         let realm = try! Realm()
         // 一覧を取得：金額を条件に、登録日時が新しい順でソート
         let TODO = realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false)
-    }
+        
+        }
     
     //セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

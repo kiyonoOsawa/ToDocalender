@@ -159,6 +159,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         try! realm.write {
             realm.add(item)
         }
+        
     }
     
     
