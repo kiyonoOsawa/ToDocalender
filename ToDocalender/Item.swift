@@ -13,7 +13,7 @@ class Item: Object {
     //タイトル
     @objc dynamic var title: String? = nil
     //String型の日付
-    @objc dynamic var dateString: String? = DateUtils.stringFromDate(date: Date(), format: "yyyy,MM,dd")
+    @objc dynamic var dateString: String? = DateUtils.stringFromDate(date: Date(), format: "yyyy/MM/dd")
     //String型の時間
     @objc dynamic var timeString: String? = DateUtils.stringFromDate(date: Date(), format: "HH:mm")
     //日付
