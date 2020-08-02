@@ -32,55 +32,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         if self.ud.object(forKey: "category") != nil {
             TODO = self.ud.object(forKey: "category") as! [String]
         }
-        //circleButton.layer.cornerRadius = 5
-    
-        // ピッカー設定
-        //pickerView.delegate = self
-        //pickerView.dataSource = self
-        //pickerView.showsSelectionIndicator = true
-        // 決定バーの生成
-//        let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 35))
-//        let spacelItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
-//        let doneItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
-//        toolbar.setItems([spacelItem, doneItem], animated: true)
-//        // インプットビュー設定
-//        textField.inputView = pickerView
-//        textField.inputAccessoryView = toolbar
-    }
-    // 決定ボタン押下
-//    @objc func done() {
-//        textField.endEditing(true)
-//        textField.text = "\(list[pickerView.selectedRow(inComponent: 0)])"
-//    }
-//    // ドラムロールの列数
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 1
-//    }
-//    // ドラムロールの行数
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        /*
-//         列が複数ある場合は
-//         if component == 0 {
-//         } else {
-//         ...
-//         }
-//         こんな感じで分岐が可能
-//         */
-//        return list.count
-//    }
-//    // ドラムロールの各タイトル
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        /*
-//         列が複数ある場合は
-//         if component == 0 {
-//         } else {
-//         ...
-//         }
-//         こんな感じで分岐が可能
-//         */
-//        return list[row]
-//    }
-    
+
     //セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TODO.count
@@ -94,8 +46,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         return cell!
     }
     
-    
-    @IBAction func addCategory(_ sender: Any) {
+        @IBAction func addCategory(_ sender: Any) {
         
         //アラートコントローラー
         let alert = UIAlertController(title: "新規カテゴリ", message: "", preferredStyle: .alert)
@@ -137,7 +88,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
                 (action: UIAlertAction!) -> Void in
                 print("OK")
                 
-                self.saveData()
+            self.saveData()
         })
             let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
                 (action: UIAlertAction!) -> Void in
@@ -159,10 +110,6 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         try! realm.write {
             realm.add(item)
         }
-        
-    }
-    
-    
     // Do any additional setup after loading the view.
 
 // Do any additional setup after loading the view.
@@ -189,6 +136,9 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         // Pass the selected object to the new view controller.
     }
     */
+    }
+       
+}
 
 
 }
