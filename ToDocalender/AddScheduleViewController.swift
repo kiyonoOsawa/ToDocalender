@@ -44,6 +44,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
         cell?.textLabel?.text = TODO[indexPath.row]
+        cell?.textLabel?.textColor =  #colorLiteral (red: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)
         
         return cell!
     }
