@@ -75,12 +75,12 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="N8X-Ua-Umc">
                             <color key="tintColor" red="0.46766452390000002" green="0.48864715530000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
-                                <action selector="addCategory:" destination="Sb4-vT-2Sl" id="H0D-9u-Q1P"/>
+                                <action selector="addCategory:" destination="Sb4-vT-2Sl" id="R1Y-pV-Tse"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="table" destination="zQL-YS-X1F" id="or4-GD-ZSo"/>
+                        <outlet property="table" destination="zQL-YS-X1F" id="SNl-b7-Cho"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwU-uN-3ST" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -32,6 +32,8 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         if self.ud.object(forKey: "category") != nil {
             TODO = self.ud.object(forKey: "category") as! [String]
         }
+        
+    }
 
     //セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +48,8 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         return cell!
     }
     
+       //@IBAction func addCategory(_ sender: Any) {
+        
         @IBAction func addCategory(_ sender: Any) {
         
         //アラートコントローラー
@@ -136,9 +140,8 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         // Pass the selected object to the new view controller.
     }
     */
-    }
+}
        
 }
 
 
-}
