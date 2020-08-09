@@ -16,6 +16,7 @@ class CalenderViewController: UIViewController, UITableViewDataSource, FSCalenda
     @IBOutlet var table:UITableView!
     @IBOutlet weak var calendar: FSCalendar!
     var tappedDateString = DateUtils.stringFromDate(date: Date(), format: "yyyy/MM/dd")
+    var TODO: Array<Item> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +31,7 @@ class CalenderViewController: UIViewController, UITableViewDataSource, FSCalenda
         // デフォルトRealmを取得
         let realm = try! Realm()
         // 一覧を取得：金額を条件に、登録日時が新しい順でソート
-        let TODO = realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false)
+        TODO = Array(realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false))
         
     }
     
@@ -67,6 +68,29 @@ class CalenderViewController: UIViewController, UITableViewDataSource, FSCalenda
         tappedDateString = DateUtils.stringFromDate(date: date, format: "yyyy/MM/dd")
         print(tappedDateString)
         table.reloadData()
+    }
+    
+    //セルの編集許可
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    //スワイプしたセルを削除
+    func tableView(_ tableview: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            do{
+                let realm = try! Realm()
+                try realm.write {
+                    realm.delete(self.TODO[indexPath.row])
+                }
+                tableview.deleteRows(at: [(indexPath as IndexPath)], with: UITableView.RowAnimation.fade)
+            }catch{
+            }
+            table.reloadData()
+//            // スワイプして削除された時に呼ばれる
+//            TODO.remove(at: indexPath.row)
+//            // Realmのデータだから、Realmの削除の方法で行う
+//            tableview.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+        }
     }
     
     /*

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5AA06B3045877D3802C017FD /* Pods_ToDocalenderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1731C056540B70F8A40694A8 /* Pods_ToDocalenderTests.framework */; };
 		6C07151F24C3E59500F0311B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C07151E24C3E59500F0311B /* Item.swift */; };
+		6C4A069224DFC83A00FCB3C9 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4A069124DFC83A00FCB3C9 /* MemoViewController.swift */; };
 		6C547E74248C905700E98164 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E73248C905700E98164 /* AppDelegate.swift */; };
 		6C547E76248C905700E98164 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E75248C905700E98164 /* SceneDelegate.swift */; };
 		6C547E78248C905700E98164 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E77248C905700E98164 /* ViewController.swift */; };
@@ -20,7 +21,6 @@
 		6C547E99248C905A00E98164 /* ToDocalenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E98248C905A00E98164 /* ToDocalenderUITests.swift */; };
 		6C611C97248CBBC300566882 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C611C96248CBBC300566882 /* CalenderViewController.swift */; };
 		6C611C99248CBBE000566882 /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C611C98248CBBE000566882 /* AddScheduleViewController.swift */; };
-		6C611C9B248CBBF200566882 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C611C9A248CBBF200566882 /* SettingViewController.swift */; };
 		6CEA775D24CFE8D90011029A /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEA775C24CFE8D90011029A /* File.swift */; };
 		DEF06796D733AD1C7C5F40B5 /* Pods_ToDocalender.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB9BC316EB3B96B0BDEA2DD /* Pods_ToDocalender.framework */; };
 		E94F37D7D931350D16FBBE36 /* Pods_ToDocalender_ToDocalenderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29E3052359B7C9C47314D881 /* Pods_ToDocalender_ToDocalenderUITests.framework */; };
@@ -50,6 +50,7 @@
 		29E3052359B7C9C47314D881 /* Pods_ToDocalender_ToDocalenderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDocalender_ToDocalenderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3482336D40200D20C4E63A8B /* Pods-ToDocalender.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDocalender.debug.xcconfig"; path = "Target Support Files/Pods-ToDocalender/Pods-ToDocalender.debug.xcconfig"; sourceTree = "<group>"; };
 		6C07151E24C3E59500F0311B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		6C4A069124DFC83A00FCB3C9 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		6C547E70248C905700E98164 /* ToDocalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDocalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C547E73248C905700E98164 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C547E75248C905700E98164 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,7 +68,6 @@
 		6C547E9A248C905A00E98164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C611C96248CBBC300566882 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		6C611C98248CBBE000566882 /* AddScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
-		6C611C9A248CBBF200566882 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		6CEA775C24CFE8D90011029A /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		99413D8A353DCCA7D55D23AB /* Pods-ToDocalender-ToDocalenderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDocalender-ToDocalenderUITests.release.xcconfig"; path = "Target Support Files/Pods-ToDocalender-ToDocalenderUITests/Pods-ToDocalender-ToDocalenderUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EDB174997D362D9928C2935E /* Pods-ToDocalenderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDocalenderTests.release.xcconfig"; path = "Target Support Files/Pods-ToDocalenderTests/Pods-ToDocalenderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -145,8 +145,8 @@
 				6C547E75248C905700E98164 /* SceneDelegate.swift */,
 				6C547E77248C905700E98164 /* ViewController.swift */,
 				6C611C96248CBBC300566882 /* CalenderViewController.swift */,
+				6C4A069124DFC83A00FCB3C9 /* MemoViewController.swift */,
 				6C611C98248CBBE000566882 /* AddScheduleViewController.swift */,
-				6C611C9A248CBBF200566882 /* SettingViewController.swift */,
 				6C07151E24C3E59500F0311B /* Item.swift */,
 				6CEA775C24CFE8D90011029A /* File.swift */,
 				6C547E79248C905700E98164 /* Main.storyboard */,
@@ -431,9 +431,9 @@
 				6C611C99248CBBE000566882 /* AddScheduleViewController.swift in Sources */,
 				6C07151F24C3E59500F0311B /* Item.swift in Sources */,
 				6C547E76248C905700E98164 /* SceneDelegate.swift in Sources */,
-				6C611C9B248CBBF200566882 /* SettingViewController.swift in Sources */,
 				6CEA775D24CFE8D90011029A /* File.swift in Sources */,
 				6C611C97248CBBC300566882 /* CalenderViewController.swift in Sources */,
+				6C4A069224DFC83A00FCB3C9 /* MemoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,12 +608,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5TMS54W5TQ;
 				INFOPLIST_FILE = ToDocalender/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalender;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.osawa.kiyo.ToDocalender-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -626,12 +627,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5TMS54W5TQ;
 				INFOPLIST_FILE = ToDocalender/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalender;
+				PRODUCT_BUNDLE_IDENTIFIER = "app.osawa.kiyo.ToDocalender-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -35,6 +35,18 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         
     }
 
+    //セルの編集許可
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    //スワイプしたセルを削除
+    func tableView(_ tableview: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            TODO.remove(at: indexPath.row)
+            tableview.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+             self.ud.set(self.TODO, forKey: "category")
+        }
+    }
     //セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TODO.count
