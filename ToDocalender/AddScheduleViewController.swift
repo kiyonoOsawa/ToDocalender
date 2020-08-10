@@ -121,7 +121,6 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         // 入力値をセット
         let item:Item = Item()
         item.title = self.saveTitle
-
         // 保存
         let realm = try! Realm()
         try! realm.write {

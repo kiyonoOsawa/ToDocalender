@@ -18,5 +18,9 @@ class Item: Object {
     @objc dynamic var timeString: String? = DateUtils.stringFromDate(date: Date(), format: "HH:mm")
     //日付
     @objc dynamic var date: Date? = Date()
+    
+    // マイグレーション必要だった
+    //メモ
+    @objc dynamic var memo: String? = nil
 
 }

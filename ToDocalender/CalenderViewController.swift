@@ -10,7 +10,7 @@ import UIKit
 import FSCalendar
 import RealmSwift
 
-class CalenderViewController: UIViewController, UITableViewDataSource, FSCalendarDataSource, FSCalendarDelegate {
+class CalenderViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, FSCalendarDataSource, FSCalendarDelegate {
     
     //storyboardで扱うTableViewを宣言
     @IBOutlet var table:UITableView!
@@ -21,29 +21,59 @@ class CalenderViewController: UIViewController, UITableViewDataSource, FSCalenda
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        table.delegate = self
+        
         // Do any additional setup after loading the view.
         
         //tableViewのデータソースメゾットはControllerクラスに書くよという設定
-        table.dataSource = self
-        calendar.dataSource = self
-        calendar.delegate = self
+//        table.dataSource = self
+//        calendar.dataSource = self
+//        calendar.delegate = self
         
         // デフォルトRealmを取得
-        let realm = try! Realm()
+        //        let realm = try! Realm()
         // 一覧を取得：金額を条件に、登録日時が新しい順でソート
-        TODO = Array(realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false))
+        //TODO = Array(realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false))
         
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // タップされたcellの行番号を出力
+        print("\(indexPath.row)番目の行が選択されました。")
+        // 別の画面に遷移
+        performSegue(withIdentifier: "toMemoViewController", sender: indexPath)
+    }
+    
+    // 画面遷移が行われる時に呼ばれる
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMemoViewController" {
+            // inddxPathを宣言している。使えるようにする。
+            let index = (sender as! IndexPath).row
+            // 選択したTODOを取得
+            let todo = TODO[index]
+            // 次の画面を取得
+            let nextVC = segue.destination as! MemoViewController
+            nextVC.todo = todo
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // tableViewのデータソースメゾットはControllerクラスに書くよという設定
+        table.dataSource = self
+        calendar.dataSource = self
+        calendar.delegate = self
+        // デフォルトRealmを取得
+        let realm = try! Realm()
+         // 一覧を取得：金額を条件に、登録日時が新しい順でソート
+        TODO = Array(realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false))
         table.reloadData()
     }
     
     //セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = try! Realm()
-        let items = realm.objects(Item.self).filter("dateString == %@", tappedDateString)
+        let items = realm.objects(Item.self).filter("dateString == %@", tappedDateString).sorted(byKeyPath: "date", ascending: false)
         return items.count
     }
     
@@ -56,7 +86,7 @@ class CalenderViewController: UIViewController, UITableViewDataSource, FSCalenda
         //デフォルトRealmを取得
         let realm = try! Realm()
         //tappedDateStringに一致するitemを取得
-        let items = realm.objects(Item.self).filter("dateString == %@", tappedDateString)
+        let items = realm.objects(Item.self).filter("dateString == %@", tappedDateString).sorted(byKeyPath: "date", ascending: false)
         print(items)
         
         titleLabel.text = items[indexPath.row].title
@@ -86,10 +116,10 @@ class CalenderViewController: UIViewController, UITableViewDataSource, FSCalenda
             }catch{
             }
             table.reloadData()
-//            // スワイプして削除された時に呼ばれる
-//            TODO.remove(at: indexPath.row)
-//            // Realmのデータだから、Realmの削除の方法で行う
-//            tableview.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
+            //            // スワイプして削除された時に呼ばれる
+            //            TODO.remove(at: indexPath.row)
+            //            // Realmのデータだから、Realmの削除の方法で行う
+            //            tableview.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
         }
     }
     
