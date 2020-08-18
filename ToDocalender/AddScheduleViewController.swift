@@ -26,7 +26,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      //tableviewのデータソースメゾットはviewcontorollerクラスに書く
+        //tableviewのデータソースメゾットはviewcontorollerクラスに書く
         table.dataSource = self
         table.delegate = self
         if self.ud.object(forKey: "category") != nil {
@@ -34,7 +34,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         }
         
     }
-
+    
     //セルの編集許可
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
@@ -44,7 +44,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         if editingStyle == UITableViewCell.EditingStyle.delete {
             TODO.remove(at: indexPath.row)
             tableview.deleteRows(at: [indexPath as IndexPath], with: UITableView.RowAnimation.automatic)
-             self.ud.set(self.TODO, forKey: "category")
+            self.ud.set(self.TODO, forKey: "category")
         }
     }
     //セルの数を設定
@@ -56,15 +56,18 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         
         cell?.textLabel?.text = TODO[indexPath.row]
-        cell?.textLabel?.textColor =  #colorLiteral (red: 66/255, green: 66/255, blue: 66/255, alpha: 1.0)
+        // textcolorを変える
+        cell?.textLabel?.textColor = #colorLiteral (red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
+        //#colorLiteral (red: 67/255, green: 67/255, blue: 67/255, alpha: 1.0)
+        // textsizeとfontを変える
+        cell?.textLabel?.font = UIFont(name: "HiraginoSans-W3", size: 17)
         
         return cell!
     }
     
-       //@IBAction func addCategory(_ sender: Any) {
-        
-        @IBAction func addCategory(_ sender: Any) {
-        
+    //@IBAction func addCategory(_ sender: Any) {
+    
+    @IBAction func addCategory(_ sender: Any) {
         //アラートコントローラー
         let alert = UIAlertController(title: "新規カテゴリ", message: "", preferredStyle: .alert)
         var textField = UITextField()
@@ -94,27 +97,27 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         
         //アラートを表示
         present(alert, animated: true, completion: nil)
-
+        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath.row)番目の行が選択されました。")
         saveTitle = TODO[indexPath.row]
         let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "記録しますか？", preferredStyle: UIAlertController.Style.actionSheet)
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK?", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("OK")
             
-            let defaultAction: UIAlertAction = UIAlertAction(title: "OK?", style: UIAlertAction.Style.default, handler:{
-                (action: UIAlertAction!) -> Void in
-                print("OK")
-                
             self.saveData()
         })
-            let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
-                (action: UIAlertAction!) -> Void in
-                print("cancel")
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertAction.Style.cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("cancel")
         })
-            alert.addAction(cancelAction)
-            alert.addAction(defaultAction)
-            
-            present(alert, animated: true, completion: nil)
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     func saveData() {
@@ -125,35 +128,45 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         let realm = try! Realm()
         try! realm.write {
             realm.add(item)
+            
+            //アラート
+            let savealert: UIAlertController = UIAlertController(title: "保存しました。", message: "", preferredStyle: .alert)
+            // 表示させる
+            present(savealert, animated: true, completion: nil)
+            // 三秒だけ表示
+            // アラートを閉じる
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
+                savealert.dismiss(animated: true, completion: nil)
+            })
         }
-    // Do any additional setup after loading the view.
-
-// Do any additional setup after loading the view.
-/*
- // MARK: - Navigation
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
-   
-
         // Do any additional setup after loading the view.
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        // Do any additional setup after loading the view.
+        /*
+         // MARK: - Navigation
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
+        
+        
+        // Do any additional setup after loading the view.
+        
+        
+        
+        /*
+         // MARK: - Navigation
+         
+         // In a storyboard-based application, you will often want to do a little preparation before navigation
+         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         // Get the new view controller using segue.destination.
+         // Pass the selected object to the new view controller.
+         }
+         */
     }
-    */
-}
-       
+    
 }
 
 

@@ -20,12 +20,18 @@ class MemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // textviewの装飾(角丸)
+        // textview
+        // 装飾(角丸)
         memoTextView.layer.cornerRadius = 5
         memoTextView.layer.masksToBounds = true
-        // label装飾
+        // 枠のカラー
+        memoTextView.layer.borderColor = UIColor.gray.cgColor
         // 枠線の幅
-        self.textLabel.layer.borderWidth = 0.05
+        memoTextView.layer.borderWidth = 0.3
+        
+        // textLabel
+        // 枠線の幅
+        self.textLabel.layer.borderWidth = 0.3
         // 枠線の色
         self.textLabel.layer.borderColor = UIColor.gray.cgColor
         //
@@ -43,9 +49,18 @@ class MemoViewController: UIViewController {
         let realm = try! Realm()
         try! realm.write {
             todo.memo = memoTextView.text
+            // アラート
+            let alert: UIAlertController = UIAlertController(title: "保存完了", message: "", preferredStyle: .alert)
+            // 表示させる
+            present(alert, animated: true, completion: nil)
+            // 三秒だけ表示
+            // アラートを閉じる
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4, execute: {
+                alert.dismiss(animated: true, completion: nil)
+            })
         }
-        
     }
+    
     /*
      // MARK: - Navigation
      
