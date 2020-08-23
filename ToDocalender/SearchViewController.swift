@@ -11,7 +11,7 @@ import RealmSwift
 
 class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
     // TODOを取得する
-    var TODO:[String] = []
+    var TODO: Array<String> = []
     var saveTitle: String = ""
     // SearchBarインスタンス
     var mySearchBar: UISearchBar!
@@ -33,9 +33,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         
         view.backgroundColor = .white
         // tableviewに表示させる配列
-        let item:Item = Item()
-        items = [saveTitle]
-        searchResult = items
+        // 「CONTAINS」演算子　「TODO」を含むデータを検索
+        let realm = try! Realm()
+        let results = realm.objects(Item.self).filter("name CONTAINS 'Item'")
+//        let item:Item = Item()
+//        items = [saveTitle]
+//        searchResult = items
         
         //navigationbar関連
         //タイトル、虫眼鏡ボタンの作成
