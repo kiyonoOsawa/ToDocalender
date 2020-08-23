@@ -51,7 +51,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return TODO.count
     }
-    //ID付きのセルを取得してセル付属のtextLabelに「テスト」と表示する
+    //ID付きのセルを取得してセル付属のtextLabelに表示させる
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell")
         

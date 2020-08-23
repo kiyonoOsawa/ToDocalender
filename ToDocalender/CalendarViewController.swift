@@ -10,7 +10,7 @@ import UIKit
 import FSCalendar
 import RealmSwift
 
-class CalenderViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, FSCalendarDataSource, FSCalendarDelegate {
+class CalendarViewController: UIViewController, UITableViewDataSource,UITableViewDelegate, FSCalendarDataSource, FSCalendarDelegate {
     
     //storyboardで扱うTableViewを宣言
     @IBOutlet var table:UITableView!

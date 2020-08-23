@@ -19,20 +19,9 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="576"/>
                                 <color key="backgroundColor" red="0.99215686274509807" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiA-wo-HgJ">
-                                <rect key="frame" x="45" y="114" width="189" height="38"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="Tno-BC-Nt8"/>
-                                    <constraint firstAttribute="width" constant="189" id="c2y-yh-AlN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="19"/>
-                                <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="blC-Ee-4AB">
                                 <rect key="frame" x="45" y="177" width="285" height="183"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="183" id="AbI-yq-U8m"/>
                                     <constraint firstAttribute="width" constant="285" id="IYY-oi-uNf"/>
@@ -50,28 +39,42 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <inset key="contentEdgeInsets" minX="3.5" minY="3.5" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="3.5" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" image="plusicon">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="penicon">
+                                    <color key="titleColor" red="1" green="0.46274509803921571" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="saveMemo" destination="ine-vl-sat" eventType="touchUpInside" id="UqL-2h-AAT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YiA-wo-HgJ">
+                                <rect key="frame" x="55" y="114" width="189" height="38"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Tno-BC-Nt8"/>
+                                    <constraint firstAttribute="width" constant="189" id="c2y-yh-AlN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="19"/>
+                                <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="highlightedColor" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="0.0" height="-2"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Rhj-Bh-TQ9" firstAttribute="leading" secondItem="DcQ-wZ-F8X" secondAttribute="leading" id="04a-QO-7ne"/>
                             <constraint firstAttribute="bottom" secondItem="Rhj-Bh-TQ9" secondAttribute="bottom" constant="47" id="4gh-gT-NIB"/>
-                            <constraint firstItem="blC-Ee-4AB" firstAttribute="top" secondItem="YiA-wo-HgJ" secondAttribute="bottom" constant="25" id="BGR-5u-fWE"/>
-                            <constraint firstItem="zgn-q9-CQj" firstAttribute="top" secondItem="blC-Ee-4AB" secondAttribute="bottom" constant="25" id="ItI-5L-fhE"/>
+                            <constraint firstItem="YiA-wo-HgJ" firstAttribute="top" secondItem="k27-TO-x7Q" secondAttribute="top" constant="70" id="BPV-zm-337"/>
                             <constraint firstItem="k27-TO-x7Q" firstAttribute="trailing" secondItem="zgn-q9-CQj" secondAttribute="trailing" constant="45" id="KdZ-as-EP6"/>
                             <constraint firstItem="zgn-q9-CQj" firstAttribute="top" secondItem="blC-Ee-4AB" secondAttribute="bottom" constant="25" id="MPT-pH-4dn"/>
-                            <constraint firstItem="blC-Ee-4AB" firstAttribute="top" secondItem="YiA-wo-HgJ" secondAttribute="bottom" constant="25" id="O6z-uh-9tt"/>
                             <constraint firstItem="k27-TO-x7Q" firstAttribute="trailing" secondItem="blC-Ee-4AB" secondAttribute="trailing" constant="45" id="TVC-tF-F79"/>
+                            <constraint firstItem="blC-Ee-4AB" firstAttribute="top" secondItem="YiA-wo-HgJ" secondAttribute="bottom" constant="25" id="bLL-0N-qia"/>
+                            <constraint firstItem="YiA-wo-HgJ" firstAttribute="leading" secondItem="k27-TO-x7Q" secondAttribute="leading" constant="55" id="dLw-zr-qHr"/>
                             <constraint firstAttribute="trailing" secondItem="Rhj-Bh-TQ9" secondAttribute="trailing" id="dOB-Qz-YFO"/>
                             <constraint firstItem="blC-Ee-4AB" firstAttribute="leading" secondItem="k27-TO-x7Q" secondAttribute="leading" constant="45" id="e7m-Ii-d0v"/>
-                            <constraint firstItem="YiA-wo-HgJ" firstAttribute="leading" secondItem="k27-TO-x7Q" secondAttribute="leading" constant="45" id="lkd-XG-rXy"/>
+                            <constraint firstItem="YiA-wo-HgJ" firstAttribute="top" secondItem="k27-TO-x7Q" secondAttribute="top" constant="70" id="jvs-x5-PRD"/>
                             <constraint firstItem="Rhj-Bh-TQ9" firstAttribute="top" secondItem="DcQ-wZ-F8X" secondAttribute="top" constant="44" id="mye-iV-UB6"/>
+                            <constraint firstItem="blC-Ee-4AB" firstAttribute="top" secondItem="YiA-wo-HgJ" secondAttribute="bottom" constant="25" id="qN4-XW-G3j"/>
                             <constraint firstItem="YiA-wo-HgJ" firstAttribute="top" secondItem="k27-TO-x7Q" secondAttribute="top" constant="70" id="z0B-Yh-EjT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="k27-TO-x7Q"/>
@@ -89,7 +92,7 @@
             </objects>
             <point key="canvasLocation" x="1538" y="-928"/>
         </scene>
-        <!--Add Schedule View Controller-->
+        <!--New-->
         <scene sceneID="8iY-3g-1aI">
             <objects>
                 <viewController id="Sb4-vT-2Sl" customClass="AddScheduleViewController" customModule="ToDocalender" customModuleProvider="target" sceneMemberID="viewController">
@@ -128,10 +131,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q7N-vx-Trl"/>
                     </view>
-                    <navigationItem key="navigationItem" id="0rr-dQ-cvm">
+                    <navigationItem key="navigationItem" title="New" id="0rr-dQ-cvm">
                         <barButtonItem key="rightBarButtonItem" image="plusicon2" id="N8X-Ua-Umc">
-                            <inset key="imageInsets" minX="14" minY="3.5" maxX="-15" maxY="0.0"/>
-                            <color key="tintColor" red="0.68627450980392157" green="0.58823529411764708" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <inset key="imageInsets" minX="14" minY="5" maxX="-15" maxY="0.0"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addCategory:" destination="Sb4-vT-2Sl" id="R1Y-pV-Tse"/>
                             </connections>
@@ -153,6 +156,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1mR-B3-cMG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.46274509803921571" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="hpE-4A-05e" kind="relationship" relationship="rootViewController" id="7lS-oX-EmR"/>
@@ -162,7 +170,7 @@
             </objects>
             <point key="canvasLocation" x="-290" y="539"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="piE-is-x9g">
             <objects>
                 <viewController id="hpE-4A-05e" customClass="SearchViewController" customModule="ToDocalender" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,10 +178,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bBH-5S-vXf">
-                                <rect key="frame" x="0.0" y="94" width="375" height="56"/>
+                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBH-5S-vXf">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q4m-dh-IYT">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="70" id="T7V-EH-s8E">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="T7V-EH-s8E" id="vi1-ZA-XPj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -187,20 +213,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fBF-2K-IO4"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3gd-fe-8Eu"/>
-                    <connections>
-                        <outlet property="Search" destination="bBH-5S-vXf" id="5bx-oa-8Df"/>
-                        <outlet property="testSearchBar" destination="bBH-5S-vXf" id="13R-pc-0O2"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Search" id="3gd-fe-8Eu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LZ6-Uw-FaP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="538"/>
+            <point key="canvasLocation" x="648.79999999999995" y="537.48125937031489"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="ED9-mM-8qQ">
             <objects>
-                <viewController id="Z2n-T3-PMf" customClass="CalenderViewController" customModule="ToDocalender" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Z2n-T3-PMf" customClass="CalendarViewController" customModule="ToDocalender" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="F7l-Q2-OZK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -240,7 +262,7 @@
                                         <color key="value" white="0.33000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="todayColor">
-                                        <color key="value" red="0.68627450980392157" green="0.58823529411764708" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="value" red="1" green="0.46274509803921571" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
                                         <color key="value" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
@@ -285,6 +307,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="UOe-of-Xhj" secondAttribute="trailing" id="3B1-az-UiZ"/>
                             <constraint firstItem="mX9-6a-6aX" firstAttribute="trailing" secondItem="sj3-ds-oKC" secondAttribute="trailing" constant="20" id="3gs-37-qC7"/>
@@ -315,7 +338,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mX9-6a-6aX"/>
                     </view>
-                    <navigationItem key="navigationItem" id="960-Lz-YIL"/>
+                    <navigationItem key="navigationItem" title="Calendar" id="960-Lz-YIL"/>
                     <connections>
                         <outlet property="calendar" destination="sj3-ds-oKC" id="EPa-Wr-QrJ"/>
                         <outlet property="table" destination="UOe-of-Xhj" id="R8Y-L8-xRj"/>
@@ -335,7 +358,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.46274509803921571" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="R8e-Bm-jCo" kind="relationship" relationship="viewControllers" id="bfD-EI-wux"/>
@@ -358,7 +381,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lYc-Ur-egD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.46274509803921571" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -378,7 +405,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PHW-pa-dbp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="1" green="0.46274509803921571" blue="0.52156862745098043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -391,7 +421,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plusicon" width="54" height="54"/>
+        <image name="penicon" width="54" height="54"/>
         <image name="plusicon2" width="54" height="54"/>
         <image name="tabbaricon1" width="30" height="30"/>
         <image name="tabbaricon2" width="30" height="30"/>

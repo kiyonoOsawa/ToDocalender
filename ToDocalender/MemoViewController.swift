@@ -22,23 +22,23 @@ class MemoViewController: UIViewController {
         super.viewDidLoad()
         // textview
         // 装飾(角丸)
-        memoTextView.layer.cornerRadius = 5
+        memoTextView.layer.cornerRadius = 2
         memoTextView.layer.masksToBounds = true
         // 枠のカラー
-        memoTextView.layer.borderColor = UIColor.gray.cgColor
+        memoTextView.layer.borderColor = UIColor.lightGray.cgColor
         // 枠線の幅
         memoTextView.layer.borderWidth = 0.3
         
         // textLabel
-        // 枠線の幅
-        self.textLabel.layer.borderWidth = 0.3
-        // 枠線の色
-        self.textLabel.layer.borderColor = UIColor.gray.cgColor
-        //
-        self.textLabel.layer.cornerRadius = 5
-        self.textLabel.clipsToBounds = true
-        //角丸装飾
-        SaveButton.layer.cornerRadius = 5
+//        // 枠線の幅
+//        self.textLabel.layer.borderWidth = 0.3
+//        //枠線の色
+//        self.textLabel.layer.borderColor = UIColor.lightGray.cgColor
+//        // 角丸
+//        self.textLabel.layer.cornerRadius = 5
+//        self.textLabel.clipsToBounds = true
+//        //角丸装飾
+//        SaveButton.layer.cornerRadius = 5
         //textlabelにtodoのタイトルを代入する。
         textLabel.text = todo.title
         memoTextView.text = todo.memo
