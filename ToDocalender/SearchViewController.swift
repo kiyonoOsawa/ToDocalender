@@ -33,6 +33,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDe
         
         view.backgroundColor = .white
         // tableviewに表示させる配列
+        let item:Item = Item()
         items = [saveTitle]
         searchResult = items
         
