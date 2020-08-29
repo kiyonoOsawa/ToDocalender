@@ -20,6 +20,7 @@
 		6C547E99248C905A00E98164 /* ToDocalenderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C547E98248C905A00E98164 /* ToDocalenderUITests.swift */; };
 		6C611C97248CBBC300566882 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C611C96248CBBC300566882 /* CalendarViewController.swift */; };
 		6C611C99248CBBE000566882 /* AddScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C611C98248CBBE000566882 /* AddScheduleViewController.swift */; };
+		6CB681C324F5551600CFEAC3 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CB681C224F5551600CFEAC3 /* TabViewController.swift */; };
 		6CEF7B2A24E7B0BA00FF669D /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEF7B2924E7B0B900FF669D /* File.swift */; };
 		6CF046CE24F2334700918776 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF046CD24F2334700918776 /* SearchViewController.swift */; };
 		6CF6A8DE24E2F3B800356F76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CF6A8DD24E2F3B800356F76 /* AppDelegate.swift */; };
@@ -68,6 +69,7 @@
 		6C547E9A248C905A00E98164 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C611C96248CBBC300566882 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		6C611C98248CBBE000566882 /* AddScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddScheduleViewController.swift; sourceTree = "<group>"; };
+		6CB681C224F5551600CFEAC3 /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		6CEF7B2924E7B0B900FF669D /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		6CF046CD24F2334700918776 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		6CF6A8DD24E2F3B800356F76 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				6C4A069124DFC83A00FCB3C9 /* MemoViewController.swift */,
 				6C611C98248CBBE000566882 /* AddScheduleViewController.swift */,
 				6CF046CD24F2334700918776 /* SearchViewController.swift */,
+				6CB681C224F5551600CFEAC3 /* TabViewController.swift */,
 				6C07151E24C3E59500F0311B /* Item.swift */,
 				6CEF7B2924E7B0B900FF669D /* File.swift */,
 				6C547E79248C905700E98164 /* Main.storyboard */,
@@ -434,6 +437,7 @@
 				6C611C99248CBBE000566882 /* AddScheduleViewController.swift in Sources */,
 				6C07151F24C3E59500F0311B /* Item.swift in Sources */,
 				6CEF7B2A24E7B0BA00FF669D /* File.swift in Sources */,
+				6CB681C324F5551600CFEAC3 /* TabViewController.swift in Sources */,
 				6C547E76248C905700E98164 /* SceneDelegate.swift in Sources */,
 				6C611C97248CBBC300566882 /* CalendarViewController.swift in Sources */,
 				6CF6A8DE24E2F3B800356F76 /* AppDelegate.swift in Sources */,

@@ -9,143 +9,152 @@
 import UIKit
 import RealmSwift
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource {
-    // TODOを取得する
-    var TODO: Array<String> = []
-    var saveTitle: String = ""
-    // SearchBarインスタンス
-    var mySearchBar: UISearchBar!
-    // tableviewインスタンス
-    var myTableView: UITableView!
-    // tableviewに表示する配列
-    var items: Array<String> = []
-    // 検索結果が入る配列
-    var searchResult: Array<String> = []
-    // searchbarの高さ
-    var searchBarHeight: CGFloat = 44
-    // SafeAreaの高さ
-    var topSafeAreaHeight: CGFloat = 0
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate{
+    
+    @IBOutlet var table:UITableView!
+    @IBOutlet var searchBar: UISearchBar!
+    
+    var searchText = ""
+    var TODO: Array<Item> = []
+    var items: Results<Item>!
+    var headerVisible = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        searchBar.delegate = self
+        table.delegate = self
+        table.dataSource = self
+        
         // Do any additional setup after loading the view.
-        
-        view.backgroundColor = .white
-        // tableviewに表示させる配列
-        // 「CONTAINS」演算子　「TODO」を含むデータを検索
-        let realm = try! Realm()
-        let result = realm.objects(Item.self).filter("name CONTAINS 'Item'")
-        
-        //navigationbar関連
-        //タイトル、虫眼鏡ボタンの作成
-        let myNavItems = UINavigationItem()
-        myNavItems.title = "検索付きtableview"
-        let rightNavBtn = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(rightBarBtnClicked(sender:)))
-        rightNavBtn.action = #selector(rightBarBtnClicked(sender:))
-        self.navigationItem.rightBarButtonItem = rightNavBtn
-        
-        // SearchBar関連
-        // SearchBarの作成
-        mySearchBar = UISearchBar()
-        // デリゲートを設定
-        mySearchBar.delegate = self
-        // 大きさの指定
-        mySearchBar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: searchBarHeight)
-        // キャンセルボタンの追加
-        mySearchBar.showsCancelButton = true
-        
-        // tableview関連
-        // tableviewの初期化
-        myTableView = UITableView()
-        // デリゲートの設定
-        myTableView.delegate = self
-        myTableView.dataSource = self
-        // tableviewの大きさの設定
-        myTableView.frame = view.frame
-        // 先ほど作成したSearchBarを作成
-        myTableView.tableHeaderView = mySearchBar
-        // サーチバーの高さだけ初期位置を下げる
-        myTableView.contentOffset = CGPoint(x: 0, y: searchBarHeight)
-        
-        // tableviewの設置
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: NSStringFromClass(UITableViewCell.self))
-        view.addSubview(myTableView)
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        // viewDidLayoutSubviewsではSafeAreaの取得ができている
-        topSafeAreaHeight = view.safeAreaInsets.top
-        print(topSafeAreaHeight)
-    }
-    // NavigationBarの右の虫眼鏡が押されたら呼ばれる
-    @objc func rightBarBtnClicked(sender: UIButton) {
-        // 一瞬で切り替わると不自然なのでアニメーションを付与する
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: [.curveLinear], animations: {
-            self.myTableView.contentOffset = CGPoint(x: 0, y: -self.topSafeAreaHeight)
-        }, completion: nil)
-    }
-    // 渡された文字列を含む要素を検索し、tableviewを再表示する
-    func searchItems(searchText: String) {
-        // 要素を検索する
-        if searchText != "" {
-            searchResult = items.filter { item in
-                return item.contains(searchText)
-                } as Array
-        }else{
-            // 渡された文字列がからの場合は全てを表示
-            searchResult = items
-        }
-        // tableviewを再読み込みする
-        myTableView.reloadData()
-    }
-    // Search Bar Delegate Methods
-    // テキストが変更される毎に呼ばれる
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // 検索する
-        searchItems(searchText: searchText)
-    }
-    
-    // キャンセルボタンが押されると呼ばれる
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.text = ""
-        view.endEditing(true)
-        searchResult = items
-        // tableviewを再読み込みする
-        myTableView.reloadData()
-    }
-    // searchボタンが押されると呼ばれる
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        view.endEditing(true)
-        // 検索する
-        searchItems(searchText: searchBar.text! as String)
-    }
-    // TableView Delegate Methods
-    // テーブルビューのセルの数を設定する
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // テーブルビューのセルの数はmyItems配列の数とした
-        return searchResult.count
-    }
-    // テーブルビューのセルの中身を設定する
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // myItems配列の中身をテキストにして登録した
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: NSStringFromClass(UITableViewCell.self))! as UITableViewCell
-        cell.textLabel?.text = self.searchResult[indexPath.row]
-        return cell
-    }
-    // tableviewのcellが押されたら呼ばれる
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(searchResult[indexPath.row])
+        // タップされたcellの行番号を出力
+        print("\(indexPath.row)番目の行が選択されました。")
+        // 別の画面に遷移
+        performSegue(withIdentifier: "toMemoViewController", sender: indexPath)
     }
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    
+    // 画面遷移が行われる時に呼ばれる
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toMemoViewController" {
+            // inddxPathを宣言している。使えるようにする。
+            let index = (sender as! IndexPath).row
+            // 選択したTODOを取得
+            let todo = TODO[index]
+            // 次の画面を取得
+            let nextVC = segue.destination as! MemoViewController
+            nextVC.todo = todo
+        }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        table.dataSource = self
+        let realm = try! Realm()
+        TODO = Array(realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false))
+        table.reloadData()
+    }
+    
+    //セルの数を設定
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let realm = try! Realm()
+        if searchText != "" {
+            //検索ワードでitemsを取得
+            items = realm.objects(Item.self).filter("title CONTAINS %@",searchText).sorted(byKeyPath: "date", ascending: false)
+        } else {
+            //検索ワードがないので全部取得
+            items = realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false)
+        }
+        return items.count
+    }
+    
+    //セルの表示
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView .dequeueReusableCell(withIdentifier: "Cell")
+        let dateLabel = cell?.viewWithTag(1) as! UILabel
+        let titleLabel = cell?.viewWithTag(2) as! UILabel
+        let timeLabel = cell?.viewWithTag(3) as! UILabel
+        
+        //デフォルトRealmを取得
+        let realm = try! Realm()
+        //tappedDateStringに一致するitemを取得
+        if searchText != "" {
+            //検索ワードでitemsを取得
+            items = realm.objects(Item.self).filter("title CONTAINS %@",searchText).sorted(byKeyPath: "date", ascending: false)
+        } else {
+            //検索ワードがないので全部取得
+            items = realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false)
+        }
+        
+        print(items)
+        
+        dateLabel.text = items[indexPath.row].dateString
+        titleLabel.text = items[indexPath.row].title
+        timeLabel.text = items[indexPath.row].timeString!
+        
+        return cell!
+    }
+    
+    //キャンセルボタンを表示
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar){
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+    
+    // キャンセルボタンでキャセルボタン非表示
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+        if let text = searchBar.text {
+            searchText = text
+            print(searchText)
+            table.reloadData()
+        }
+    }
     
 }
+
+extension SearchViewController {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        performHeaderCheck(translation: translation)
+    }
+    
+    func performHeaderCheck(translation:CGPoint) {
+        if translation.y == 0 { return }
+        if translation.y > 0 {
+            // Scroll Down
+            if !headerVisible {
+                showHeader()
+            }
+        } else {
+            // Scroll Up
+            if headerVisible {
+                hideHeader()
+            }
+        }
+    }
+    
+    func hideHeader() {
+        self.headerVisible = false
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+            let parent = self.parent as! TabViewController
+            parent.hideHeader()
+        })
+    }
+    
+    func showHeader() {
+        self.headerVisible = true
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+            let parent = self.parent as! TabViewController
+            parent.showHeader()
+        })
+    }
+}
+
+

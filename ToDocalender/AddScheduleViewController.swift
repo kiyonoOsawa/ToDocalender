@@ -20,6 +20,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
     var TODO:[String] = []
     let ud = UserDefaults.standard
     var saveTitle: String = ""
+    var hearderVisible = true
     
     //@IBOutlet var circleButton: UIButton!
     
@@ -65,9 +66,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         return cell!
     }
     
-    //@IBAction func addCategory(_ sender: Any) {
-    
-    @IBAction func addCategory(_ sender: Any) {
+    @objc func addCategory() {
         //アラートコントローラー
         let alert = UIAlertController(title: "新規カテゴリ", message: "", preferredStyle: .alert)
         var textField = UITextField()
@@ -167,6 +166,42 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
          */
     }
     
+}
+extension AddScheduleViewController {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        performHeaderCheck(translation: translation)
+    }
+    func performHeaderCheck(translation: CGPoint) {
+        if translation.y == 0 {return}
+        if translation.y > 0 {
+            // Scroll Down
+            if !hearderVisible {
+                showHeader()
+            }
+        } else {
+            // Scroll Up
+            if hearderVisible {
+                hideHeader()
+            }
+        }
+    }
+    
+    func hideHeader() {
+        self.hearderVisible = false
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+            let parent = self.parent as! TabViewController
+            parent.hideHeader()
+        })
+    }
+    func showHeader() {
+        self.hearderVisible = true
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+            let parent = self.parent as! TabViewController
+            parent.showHeader()
+        })
+    }
 }
 
 

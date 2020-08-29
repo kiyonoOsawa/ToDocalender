@@ -17,6 +17,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource,UITableVie
     @IBOutlet weak var calendar: FSCalendar!
     var tappedDateString = DateUtils.stringFromDate(date: Date(), format: "yyyy/MM/dd")
     var TODO: Array<Item> = []
+    var hearderVisible = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,4 +134,41 @@ class CalendarViewController: UIViewController, UITableViewDataSource,UITableVie
      }
      */
     
+}
+
+extension CalendarViewController {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let translation = scrollView.panGestureRecognizer.translation(in: scrollView.superview)
+        performHeaderCheck(translation: translation)
+    }
+    func performHeaderCheck(translation: CGPoint) {
+        if translation.y == 0 {return}
+        if translation.y > 0 {
+            // Scroll Down
+            if !hearderVisible {
+                showHeader()
+            }
+        } else {
+            // Scroll Up
+            if hearderVisible {
+                hideHeader()
+            }
+        }
+    }
+    
+    func hideHeader() {
+        self.hearderVisible = false
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+            let parent = self.parent as! TabViewController
+            parent.hideHeader()
+        })
+    }
+    func showHeader() {
+        self.hearderVisible = true
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveLinear, animations: {
+            let parent = self.parent as! TabViewController
+            parent.showHeader()
+        })
+    }
 }
