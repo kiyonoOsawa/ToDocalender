@@ -54,7 +54,7 @@
 		6C07151E24C3E59500F0311B /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		6C106E4F24E3D43700612A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C4A069124DFC83A00FCB3C9 /* MemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
-		6C547E70248C905700E98164 /* ToDocalender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDocalender.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C547E70248C905700E98164 /* dig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dig.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C547E75248C905700E98164 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6C547E77248C905700E98164 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6C547E7A248C905700E98164 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -135,7 +135,7 @@
 		6C547E71248C905700E98164 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6C547E70248C905700E98164 /* ToDocalender.app */,
+				6C547E70248C905700E98164 /* dig.app */,
 				6C547E89248C905A00E98164 /* ToDocalenderTests.xctest */,
 				6C547E94248C905A00E98164 /* ToDocalenderUITests.xctest */,
 			);
@@ -211,7 +211,7 @@
 			);
 			name = ToDocalender;
 			productName = ToDocalender;
-			productReference = 6C547E70248C905700E98164 /* ToDocalender.app */;
+			productReference = 6C547E70248C905700E98164 /* dig.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6C547E88248C905A00E98164 /* ToDocalenderTests */ = {
@@ -623,8 +623,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalender;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.dig;
+				PRODUCT_NAME = dig;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -644,8 +644,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.ToDocalender;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = app.osawa.kiyo.dig;
+				PRODUCT_NAME = dig;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

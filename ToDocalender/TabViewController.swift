@@ -36,28 +36,34 @@ class TabViewController: UIViewController {
         buttons[selectedIndex].isSelected = true
         tabChanged(sender:buttons[selectedIndex])
         tabView.layer.cornerRadius = 30
-        
-//        UIButton.appearance().tintColor = UIColor(red: 255/255, green: 118/255, blue: 133/255, alpha: 1.0)
+        tabView.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        tabView.layer.shadowColor = UIColor.gray.cgColor
+        tabView.layer.shadowOpacity = 0.6
+        tabView.layer.shadowRadius = 4
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
+
 //MARK:-Actions
 extension TabViewController {
     
     @IBAction func tabChanged(sender:UIButton){
         previousIndex = selectedIndex
         selectedIndex = sender.tag
+        
+        if selectedIndex == 0 {
+            buttons[0].setBackgroundImage(UIImage(named: "home_selected"), for: .normal)
+            buttons[1].setBackgroundImage(UIImage(named: "add"), for: .normal)
+            buttons[2].setBackgroundImage(UIImage(named: "search"), for: .normal)
+        } else if selectedIndex == 1 {
+            buttons[0].setBackgroundImage(UIImage(named: "home"), for: .normal)
+            buttons[1].setBackgroundImage(UIImage(named: "add_selected"), for: .normal)
+            buttons[2].setBackgroundImage(UIImage(named: "search"), for: .normal)
+        } else {
+            buttons[0].setBackgroundImage(UIImage(named: "home"), for: .normal)
+            buttons[1].setBackgroundImage(UIImage(named: "add"), for: .normal)
+            buttons[2].setBackgroundImage(UIImage(named: "search_selected"), for: .normal)
+        }
         
         buttons[previousIndex].isSelected = false
         let previousVC = viewConrtollers[previousIndex]
@@ -84,17 +90,21 @@ extension TabViewController {
         self.view.bringSubviewToFront(tabView)
         
     }
+    
     func hideHeader() {
         UIView.animate(withDuration: 1.0, delay: 0, options: .curveLinear, animations:{
             self.tabView.alpha = 0
         })
     }
+    
     func showHeader() {
         UIView.animate(withDuration: 1.0, delay: 0, options: .curveLinear,animations: {
             self.tabView.alpha = 1
         })
     }
+    
     @objc func addCategory() {
         TabViewController.addVC.addCategory()
     }
+    
 }

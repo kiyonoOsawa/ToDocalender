@@ -28,22 +28,11 @@ class MemoViewController: UIViewController {
         memoTextView.layer.borderColor = UIColor.lightGray.cgColor
         // 枠線の幅
         memoTextView.layer.borderWidth = 0.3
-        
-        // textLabel
-//        // 枠線の幅
-//        self.textLabel.layer.borderWidth = 0.3
-//        //枠線の色
-//        self.textLabel.layer.borderColor = UIColor.lightGray.cgColor
-//        // 角丸
-//        self.textLabel.layer.cornerRadius = 5
-//        self.textLabel.clipsToBounds = true
-//        //角丸装飾
-//        SaveButton.layer.cornerRadius = 5
         //textlabelにtodoのタイトルを代入する。
         textLabel.text = todo.title
         memoTextView.text = todo.memo
-        // Do any additional setup after loading the view.
     }
+    
     @IBAction func saveMemo() {
         //保存の処理
         let realm = try! Realm()
@@ -60,15 +49,5 @@ class MemoViewController: UIViewController {
             })
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

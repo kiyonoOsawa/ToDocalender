@@ -25,9 +25,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchBar.delegate = self
         table.delegate = self
         table.dataSource = self
-        
-        // Do any additional setup after loading the view.
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // タップされたcellの行番号を出力
         print("\(indexPath.row)番目の行が選択されました。")
@@ -47,6 +46,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             nextVC.todo = todo
         }
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         table.dataSource = self
@@ -55,34 +55,34 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         table.reloadData()
     }
     
-    //セルの数を設定
+    // セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = try! Realm()
         if searchText != "" {
-            //検索ワードでitemsを取得
+            // 検索ワードでitemsを取得
             items = realm.objects(Item.self).filter("title CONTAINS %@",searchText).sorted(byKeyPath: "date", ascending: false)
         } else {
-            //検索ワードがないので全部取得
+            // 検索ワードがないので全部取得
             items = realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false)
         }
         return items.count
     }
     
-    //セルの表示
+    // セルの表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView .dequeueReusableCell(withIdentifier: "Cell")
         let dateLabel = cell?.viewWithTag(1) as! UILabel
         let titleLabel = cell?.viewWithTag(2) as! UILabel
         let timeLabel = cell?.viewWithTag(3) as! UILabel
         
-        //デフォルトRealmを取得
+        // デフォルトRealmを取得
         let realm = try! Realm()
-        //tappedDateStringに一致するitemを取得
+        // tappedDateStringに一致するitemを取得
         if searchText != "" {
-            //検索ワードでitemsを取得
+            // 検索ワードでitemsを取得
             items = realm.objects(Item.self).filter("title CONTAINS %@",searchText).sorted(byKeyPath: "date", ascending: false)
         } else {
-            //検索ワードがないので全部取得
+            // 検索ワードがないので全部取得
             items = realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false)
         }
         
@@ -155,6 +155,7 @@ extension SearchViewController {
             parent.showHeader()
         })
     }
+    
 }
 
 
