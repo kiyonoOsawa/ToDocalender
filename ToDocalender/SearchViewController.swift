@@ -58,7 +58,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     // セルの数を設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let realm = try! Realm()
-        if searchText != "" {
+        if searchText != "" && searchText != nil {
             // 検索ワードでitemsを取得
             items = realm.objects(Item.self).filter("title CONTAINS %@",searchText).sorted(byKeyPath: "date", ascending: false)
         } else {
@@ -104,6 +104,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
+        //        let realm = try! Realm()
+        //        items = realm.objects(Item.self).sorted(byKeyPath: "date", ascending: false)
+        //        table.reloadData()
+        searchText = ""
+        table.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

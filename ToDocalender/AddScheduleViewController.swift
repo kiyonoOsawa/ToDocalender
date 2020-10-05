@@ -84,6 +84,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
             // １つ目のtextFieldのタグ
             textField = text
         }
+        alert.view.tintColor = .black
         // アラートを表示
         present(alert, animated: true, completion: nil)
     }
@@ -91,9 +92,9 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("\(indexPath.row)番目の行が選択されました。")
         saveTitle = TODO[indexPath.row]
-        let alert: UIAlertController = UIAlertController(title: "アラート表示", message: "記録しますか？", preferredStyle: UIAlertController.Style.actionSheet)
+        let alert: UIAlertController = UIAlertController(title: "記録しますか？", message: "カレンダーに表示されます。", preferredStyle: UIAlertController.Style.actionSheet)
         
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK?", style: UIAlertAction.Style.default, handler:{
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
             (action: UIAlertAction!) -> Void in
             print("OK")
             
@@ -105,6 +106,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
         })
         alert.addAction(cancelAction)
         alert.addAction(defaultAction)
+        alert.view.tintColor = .black
         present(alert, animated: true, completion: nil)
     }
     
@@ -118,6 +120,7 @@ class AddScheduleViewController: UIViewController, UITableViewDataSource, UITabl
             realm.add(item)
             // アラート
             let savealert: UIAlertController = UIAlertController(title: "保存しました。", message: "", preferredStyle: .alert)
+            savealert.view.tintColor = .black
             // 表示させる
             present(savealert, animated: true, completion: nil)
             // 三秒だけ表示

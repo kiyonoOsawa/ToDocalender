@@ -41,6 +41,7 @@ class MemoViewController: UIViewController {
             // アラート
             let alert: UIAlertController = UIAlertController(title: "保存完了", message: "", preferredStyle: .alert)
             // 表示させる
+            alert.view.tintColor = .black
             present(alert, animated: true, completion: nil)
             // 三秒だけ表示
             // アラートを閉じる
