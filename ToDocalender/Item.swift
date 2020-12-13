@@ -12,6 +12,7 @@ import RealmSwift
 class Item: Object {
     //タイトル
     @objc dynamic var title: String? = nil
+    @objc dynamic var categoryNum: Int = 0
     //String型の日付
     @objc dynamic var dateString: String? = DateUtils.stringFromDate(date: Date(), format: "yyyy/MM/dd")
     //String型の時間

@@ -18,6 +18,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource,UITableVie
     var tappedDateString = DateUtils.stringFromDate(date: Date(), format: "yyyy/MM/dd")
     var TODO: Array<Item> = []
     var hearderVisible = true
+    let imageList = ["", "helth", "work", "eat", "shop", "study", "exercise", "daily", "break", "phone", "other"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,13 +70,15 @@ class CalendarViewController: UIViewController, UITableViewDataSource,UITableVie
     // セルの表示
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView .dequeueReusableCell(withIdentifier: "Cell")
-        let titleLabel = cell?.viewWithTag(1) as! UILabel
-        let timeLabel = cell?.viewWithTag(2) as! UILabel
+        let imageView = cell?.viewWithTag(1) as! UIImageView
+        let titleLabel = cell?.viewWithTag(2) as! UILabel
+        let timeLabel = cell?.viewWithTag(3) as! UILabel
         // デフォルトRealmを取得
         let realm = try! Realm()
         // tappedDateStringに一致するitemを取得
         let items = realm.objects(Item.self).filter("dateString == %@", tappedDateString).sorted(byKeyPath: "date", ascending: false)
         print(items)
+        imageView.image = UIImage(named: imageList[items[indexPath.row].categoryNum])
         titleLabel.text = items[indexPath.row].title
         timeLabel.text = items[indexPath.row].timeString!
         return cell!
